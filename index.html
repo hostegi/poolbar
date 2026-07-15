@@ -175,6 +175,14 @@ main{max-width:640px; margin:0 auto; padding:0 18px;}
   margin:20px 0 8px;
 }
 .subgroup:first-of-type{margin-top:4px;}
+.subgroup-link{
+  color:var(--orange);
+  text-decoration:none;
+  font-weight:700;
+  letter-spacing:0.3px;
+  border-bottom:1px solid var(--orange);
+  padding-bottom:1px;
+}
 
 .item{
   display:flex;
@@ -438,7 +446,7 @@ footer{
   <section class="section" id="gelati">
     <div class="section-head"><span class="num">08</span><h2>Gelati &amp; granite</h2></div>
     <div class="section-rule"></div>
-    <div class="subgroup">Prodotti artigianali</div>
+    <div class="subgroup">Prodotti artigianali <a class="subgroup-link" href="https://www.sestosensocream.it/chi-siamo.php" target="_blank" rel="noopener">— Sesto Senso Cream</a></div>
     <div class="item"><span class="item-name">Rocher Pistacchio</span><span class="item-fill"></span><span class="item-price">4,50 €</span></div>
     <div class="item"><span class="item-name">Nocciolato</span><span class="item-fill"></span><span class="item-price">4,50 €</span></div>
     <div class="item"><span class="item-name">Tartufo Nocciola e Cacao</span><span class="item-fill"></span><span class="item-price">4,50 €</span></div>
@@ -478,6 +486,7 @@ footer{
 
 <script>
   const links = document.querySelectorAll('#nav a');
+  const navEl = document.getElementById('nav');
   const sections = document.querySelectorAll('.section');
   const obs = new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{
@@ -486,7 +495,8 @@ footer{
         const active = document.querySelector('#nav a[href="#'+entry.target.id+'"]');
         if(active){
           active.classList.add('active');
-          active.scrollIntoView({behavior:'smooth', inline:'center', block:'nearest'});
+          const target = active.offsetLeft - (navEl.clientWidth/2) + (active.clientWidth/2);
+          navEl.scrollTo({left: target, behavior:'smooth'});
         }
       }
     });
