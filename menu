@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pool Bar 2026 · Hotel delle Stelle</title>
+<style>
+@import url('https://fonts.cdnfonts.com/css/hey-gotcha');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Work+Sans:wght@400;500;600;700&display=swap');
+
+:root{
+  --navy:#173B73;
+  --navy-deep:#0F2A54;
+  --orange:#EA5A2E;
+  --cream:#FFFFFF;
+  --tint:#EEF3FA;
+  --ink:#12294D;
+  --muted:#7488A6;
+  --line:#D9E2F0;
+  --tbd:#C24A1E;
+}
+
+*{box-sizing:border-box; margin:0; padding:0; -webkit-tap-highlight-color:transparent;}
+
+html{scroll-behavior:smooth; overflow-x:hidden;}
+
+body{
+  font-family:'Work Sans', sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  padding-bottom:60px;
+  overflow-x:hidden;
+  -webkit-text-size-adjust:100%;
+  text-rendering:optimizeLegibility;
+}
+
+.display{
+  font-family:'Hey Gotcha','Baloo 2', sans-serif;
+  font-weight:800;
+  letter-spacing:0.5px;
+}
+
+/* ===== HERO ===== */
+.hero{
+  position:relative;
+  background:var(--navy);
+  color:#fff;
+  overflow:hidden;
+  padding:38px 22px 34px;
+  text-align:center;
+}
+.hero .stars{
+  font-size:13px;
+  letter-spacing:6px;
+  color:#9FB4DC;
+  margin-bottom:10px;
+  text-transform:uppercase;
+}
+.hero h1{
+  font-family:'Hey Gotcha','Baloo 2', sans-serif;
+  font-weight:800;
+  font-size:clamp(48px,15vw,88px);
+  line-height:0.92;
+  color:#fff;
+  text-shadow:3px 3px 0 var(--orange);
+}
+.hero .sub{
+  margin-top:14px;
+  font-size:13px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:#C9D8F0;
+}
+.hero .bg-word{
+  position:absolute;
+  font-family:'Hey Gotcha','Baloo 2', sans-serif;
+  font-weight:800;
+  color:rgba(255,255,255,0.05);
+  font-size:180px;
+  top:-40px;
+  right:-30px;
+  transform:rotate(8deg);
+  pointer-events:none;
+  line-height:1;
+}
+.hotel-tag{
+  margin-top:18px;
+  font-size:12px;
+  color:#C9D8F0;
+  letter-spacing:1px;
+}
+.hotel-tag strong{color:#fff;}
+
+/* ===== NAV ===== */
+.nav-wrap{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:var(--cream);
+  border-bottom:1px solid var(--line);
+  padding:10px 0;
+  padding-top:max(10px, env(safe-area-inset-top));
+}
+.nav{
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+  padding:0 16px;
+  scrollbar-width:none;
+  -webkit-overflow-scrolling:touch;
+}
+.nav::-webkit-scrollbar{display:none;}
+.nav a{
+  flex:0 0 auto;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:600;
+  color:var(--navy);
+  background:var(--tint);
+  padding:11px 16px;
+  min-height:40px;
+  display:flex;
+  align-items:center;
+  border-radius:999px;
+  white-space:nowrap;
+  border:1px solid transparent;
+  transition:all .15s ease;
+}
+.nav a.active,
+.nav a:hover{
+  background:var(--orange);
+  color:#fff;
+}
+
+/* ===== SECTIONS ===== */
+main{max-width:640px; margin:0 auto; padding:0 18px;}
+
+.section{
+  padding:36px 0 8px;
+  scroll-margin-top:64px;
+}
+.section-head{
+  display:flex;
+  align-items:baseline;
+  gap:10px;
+  margin-bottom:6px;
+}
+.section-head .num{
+  font-family:'Hey Gotcha','Baloo 2', sans-serif;
+  font-weight:800;
+  font-size:15px;
+  color:var(--orange);
+}
+.section h2{
+  font-family:'Hey Gotcha','Baloo 2', sans-serif;
+  font-weight:800;
+  font-size:clamp(26px,7vw,34px);
+  color:var(--navy);
+  text-transform:uppercase;
+}
+.section-rule{
+  height:3px;
+  width:56px;
+  background:var(--orange);
+  margin:8px 0 18px;
+  border-radius:2px;
+}
+
+.subgroup{
+  font-size:11.5px;
+  font-weight:700;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin:20px 0 8px;
+}
+.subgroup:first-of-type{margin-top:4px;}
+
+.item{
+  display:flex;
+  align-items:baseline;
+  flex-wrap:wrap;
+  gap:6px 8px;
+  padding:11px 0;
+  border-bottom:1px dotted var(--line);
+}
+.item:last-child{border-bottom:none;}
+.item-name{
+  font-size:15.5px;
+  line-height:1.35;
+  font-weight:500;
+  color:var(--ink);
+  flex:1 1 150px;
+  min-width:0;
+}
+.item-allergen{
+  font-size:11.5px;
+  color:var(--muted);
+  font-style:italic;
+}
+.item-fill{
+  flex:1 1 20px;
+  min-width:20px;
+  border-bottom:1px dotted var(--line);
+  transform:translateY(-3px);
+  order:2;
+}
+.item-price{
+  font-weight:700;
+  font-size:15.5px;
+  color:var(--navy);
+  flex-shrink:0;
+  white-space:nowrap;
+  order:3;
+}
+.item-price.tbd{
+  color:var(--tbd);
+  font-weight:600;
+  font-size:12.5px;
+  font-style:italic;
+}
+
+/* ===== FOOTER / ALLERGEN LEGEND ===== */
+.legend{
+  margin-top:44px;
+  padding:18px 16px;
+  background:var(--tint);
+  border-radius:14px;
+  font-size:11.5px;
+  color:var(--muted);
+  line-height:1.6;
+}
+.legend strong{color:var(--navy);}
+
+footer{
+  text-align:center;
+  padding:34px 16px 10px;
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.7;
+}
+footer .brand{
+  font-family:'Hey Gotcha','Baloo 2', sans-serif;
+  font-weight:800;
+  font-size:22px;
+  color:var(--navy);
+  display:block;
+  margin-bottom:6px;
+}
+
+@media (max-width:400px){
+  .hero{padding:26px 16px 22px;}
+  .hero h1{font-size:clamp(42px,16vw,60px);}
+  .item-name{font-size:15px;}
+  .item-price{font-size:15px;}
+  main{padding:0 16px;}
+}
+
+footer{
+  padding-bottom:max(10px, env(safe-area-inset-bottom));
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="bg-word">SUN</div>
+  <h1 class="display">Pool Bar</h1>
+  <div class="sub">Listino 2026</div>
+  <div class="hotel-tag"><strong>Hotel delle Stelle Beach Resort</strong></div>
+</div>
+
+<div class="nav-wrap">
+  <nav class="nav" id="nav">
+    <a href="#caffe">Caffè</a>
+    <a href="#bibite">Bibite</a>
+    <a href="#estratti">Estratti</a>
+    <a href="#birre">Birre &amp; Snack</a>
+    <a href="#amari">Amari &amp; Grappe</a>
+    <a href="#liquori">Liquori, Rum &amp; Whisky</a>
+    <a href="#cocktail">Cocktail &amp; Vodka</a>
+    <a href="#gelati">Gelati &amp; Granite</a>
+    <a href="#crepes">Crêpes</a>
+    <a href="#popcorn">Pop Corn</a>
+    <a href="#zucchero">Zucchero Filato</a>
+  </nav>
+</div>
+
+<main>
+
+  <section class="section" id="caffe">
+    <div class="section-head"><span class="num">01</span><h2>Caffè &amp; bevande calde</h2></div>
+    <div class="section-rule"></div>
+    <div class="item"><span class="item-name">Acqua Gassata 500ml</span><span class="item-fill"></span><span class="item-price">1,00 €</span></div>
+    <div class="item"><span class="item-name">Acqua Naturale 500ml</span><span class="item-fill"></span><span class="item-price">1,00 €</span></div>
+    <div class="item"><span class="item-name">Caffè</span><span class="item-fill"></span><span class="item-price">1,20 €</span></div>
+    <div class="item"><span class="item-name">Caffè Macchiato <span class="item-allergen">(latte)</span></span><span class="item-fill"></span><span class="item-price">1,20 €</span></div>
+    <div class="item"><span class="item-name">Caffè Corretto</span><span class="item-fill"></span><span class="item-price">1,50 €</span></div>
+    <div class="item"><span class="item-name">Caffè Freddo</span><span class="item-fill"></span><span class="item-price">1,50 €</span></div>
+    <div class="item"><span class="item-name">Caffè Shakerato</span><span class="item-fill"></span><span class="item-price">3,00 €</span></div>
+    <div class="item"><span class="item-name">Camomilla</span><span class="item-fill"></span><span class="item-price">2,00 €</span></div>
+    <div class="item"><span class="item-name">Cappuccino <span class="item-allergen">(latte)</span></span><span class="item-fill"></span><span class="item-price">2,00 €</span></div>
+    <div class="item"><span class="item-name">Crema Caffè <span class="item-allergen">(latte)</span></span><span class="item-fill"></span><span class="item-price">2,50 €</span></div>
+    <div class="item"><span class="item-name">Decaffeinato</span><span class="item-fill"></span><span class="item-price">1,50 €</span></div>
+    <div class="item"><span class="item-name">Ginseng</span><span class="item-fill"></span><span class="item-price">1,50 €</span></div>
+    <div class="item"><span class="item-name">Latte Bianco <span class="item-allergen">(latte)</span></span><span class="item-fill"></span><span class="item-price">1,00 €</span></div>
+    <div class="item"><span class="item-name">Latte Macchiato <span class="item-allergen">(latte)</span></span><span class="item-fill"></span><span class="item-price">2,00 €</span></div>
+    <div class="item"><span class="item-name">Orzo <span class="item-allergen">(glutine)</span></span><span class="item-fill"></span><span class="item-price">1,50 €</span></div>
+    <div class="item"><span class="item-name">Tè Caldo <span class="item-allergen">(*)</span></span><span class="item-fill"></span><span class="item-price">2,00 €</span></div>
+    <div class="item"><span class="item-name">Tisane <span class="item-allergen">(*)</span></span><span class="item-fill"></span><span class="item-price">2,00 €</span></div>
+  </section>
+
+  <section class="section" id="bibite">
+    <div class="section-head"><span class="num">02</span><h2>Bibite &amp; analcolici</h2></div>
+    <div class="section-rule"></div>
+    <div class="item"><span class="item-name">Aperol Soda 12,5cl</span><span class="item-fill"></span><span class="item-price">3,00 €</span></div>
+    <div class="item"><span class="item-name">Campari Soda 9,8cl</span><span class="item-fill"></span><span class="item-price">3,50 €</span></div>
+    <div class="item"><span class="item-name">Cedrata Tassoni 18cl</span><span class="item-fill"></span><span class="item-price">2,60 €</span></div>
+    <div class="item"><span class="item-name">Chinò San Pellegrino 33cl</span><span class="item-fill"></span><span class="item-price">2,50 €</span></div>
+    <div class="item"><span class="item-name">Coca-Cola 33cl</span><span class="item-fill"></span><span class="item-price">2,50 €</span></div>
+    <div class="item"><span class="item-name">Coca-Cola Zero 33cl</span><span class="item-fill"></span><span class="item-price">2,50 €</span></div>
+    <div class="item"><span class="item-name">Cocktail San Pellegrino 33cl</span><span class="item-fill"></span><span class="item-price">2,50 €</span></div>
+    <div class="item"><span class="item-name">Crodino 10cl</span><span class="item-fill"></span><span class="item-price">2,50 €</span></div>
+    <div class="item"><span class="item-name">Crodino Twist Rosso 17cl</span><span class="item-fill"></span><span class="item-price">2,50 €</span></div>
+    <div class="item"><span class="item-name">Estathé Limone/Pesca 33cl</span><span class="item-fill"></span><span class="item-price">2,50 €</span></div>
+    <div class="item"><span class="item-name">Fanta Orange 33cl</span><span class="item-fill"></span><span class="item-price">2,50 €</span></div>
+    <div class="item"><span class="item-name">Lemonsoda 33cl</span><span class="item-fill"></span><span class="item-price">2,50 €</span></div>
+    <div class="item"><span class="item-name">Red Bull 25cl</span><span class="item-fill"></span><span class="item-price">4,00 €</span></div>
+    <div class="item"><span class="item-name">Sanbitter Bianco/Rosso 10cl</span><span class="item-fill"></span><span class="item-price">2,50 €</span></div>
+    <div class="item"><span class="item-name">Sprite lattina 33cl</span><span class="item-fill"></span><span class="item-price">2,50 €</span></div>
+    <div class="item"><span class="item-name">Succhi di Frutta vari gusti 200ml <span class="item-allergen">(*)</span></span><span class="item-fill"></span><span class="item-price">2,00 €</span></div>
+    <div class="item"><span class="item-name">Tonica Schweppes 18cl</span><span class="item-fill"></span><span class="item-price">2,50 €</span></div>
+    <div class="item"><span class="item-name">Tonica Schweppes Lemon/Orange 18cl</span><span class="item-fill"></span><span class="item-price">2,50 €</span></div>
+    <div class="item"><span class="item-name">Tropical <span class="item-allergen">(latte)</span></span><span class="item-fill"></span><span class="item-price">3,00 €</span></div>
+  </section>
+
+  <section class="section" id="estratti">
+    <div class="section-head"><span class="num">03</span><h2>Estratti &amp; sciroppi</h2></div>
+    <div class="section-rule"></div>
+    <div class="item"><span class="item-name">Amarena</span><span class="item-fill"></span><span class="item-price">2,00 €</span></div>
+    <div class="item"><span class="item-name">Latte di Mandorla <span class="item-allergen">(frutta a guscio)</span></span><span class="item-fill"></span><span class="item-price">2,00 €</span></div>
+    <div class="item"><span class="item-name">Menta</span><span class="item-fill"></span><span class="item-price">2,00 €</span></div>
+    <div class="item"><span class="item-name">Orzata <span class="item-allergen">(frutta a guscio)</span></span><span class="item-fill"></span><span class="item-price">2,00 €</span></div>
+    <div class="item"><span class="item-name">Spremuta</span><span class="item-fill"></span><span class="item-price">2,50 €</span></div>
+  </section>
+
+  <section class="section" id="birre">
+    <div class="section-head"><span class="num">04</span><h2>Birre &amp; snack</h2></div>
+    <div class="section-rule"></div>
+    <div class="subgroup">Birre</div>
+    <div class="item"><span class="item-name">Birra alla Spina Piccola <span class="item-allergen">(glutine)</span></span><span class="item-fill"></span><span class="item-price">2,50 €</span></div>
+    <div class="item"><span class="item-name">Birra alla Spina Media <span class="item-allergen">(glutine)</span></span><span class="item-fill"></span><span class="item-price">3,50 €</span></div>
+    <div class="item"><span class="item-name">Birra Bjorne 33cl <span class="item-allergen">(glutine)</span></span><span class="item-fill"></span><span class="item-price">4,50 €</span></div>
+    <div class="item"><span class="item-name">Birra Corona 33cl <span class="item-allergen">(glutine)</span></span><span class="item-fill"></span><span class="item-price">4,00 €</span></div>
+    <div class="item"><span class="item-name">Birra Heineken 33cl <span class="item-allergen">(glutine)</span></span><span class="item-fill"></span><span class="item-price">3,00 €</span></div>
+    <div class="item"><span class="item-name">Birra Nastro Azzurro 33cl <span class="item-allergen">(glutine)</span></span><span class="item-fill"></span><span class="item-price">3,00 €</span></div>
+    <div class="item"><span class="item-name">Birra Tennent's 33cl <span class="item-allergen">(glutine)</span></span><span class="item-fill"></span><span class="item-price">4,50 €</span></div>
+    <div class="item"><span class="item-name">Birra Peroni Senza Glutine 33cl</span><span class="item-fill"></span><span class="item-price">2,00 €</span></div>
+    <div class="subgroup">Snack</div>
+    <div class="item"><span class="item-name">Chupa Chups</span><span class="item-fill"></span><span class="item-price">0,70 €</span></div>
+    <div class="item"><span class="item-name">Patatine busta <span class="item-allergen">(*)</span></span><span class="item-fill"></span><span class="item-price">1,50 €</span></div>
+    <div class="item"><span class="item-name">Patatine sorpresa <span class="item-allergen">(*)</span></span><span class="item-fill"></span><span class="item-price">1,50 €</span></div>
+    <div class="item"><span class="item-name">Patatine tubo <span class="item-allergen">(*)</span></span><span class="item-fill"></span><span class="item-price">2,50 €</span></div>
+    <div class="item"><span class="item-name">Croissant <span class="item-allergen">(latte, glutine, frumento, uova)</span></span><span class="item-fill"></span><span class="item-price">1,00 €</span></div>
+    <div class="item"><span class="item-name">Morositas Frutta/Assortite/Liquirizia</span><span class="item-fill"></span><span class="item-price">1,50 €</span></div>
+    <div class="item"><span class="item-name">Tic Tac Arancia/Menta/Mix</span><span class="item-fill"></span><span class="item-price">1,00 €</span></div>
+    <div class="item"><span class="item-name">Chewing Gum Stick <span class="item-allergen">(*)</span></span><span class="item-fill"></span><span class="item-price">1,00 €</span></div>
+    <div class="item"><span class="item-name">Chewing Gum Box <span class="item-allergen">(*)</span></span><span class="item-fill"></span><span class="item-price">2,00 €</span></div>
+    <div class="item"><span class="item-name">Cuffie Piscina</span><span class="item-fill"></span><span class="item-price">2,50 €</span></div>
+  </section>
+
+  <section class="section" id="amari">
+    <div class="section-head"><span class="num">05</span><h2>Amari, digestivi &amp; grappe</h2></div>
+    <div class="section-rule"></div>
+    <div class="subgroup">Amari &amp; digestivi</div>
+    <div class="item"><span class="item-name">Amaro Averna</span><span class="item-fill"></span><span class="item-price">3,00 €</span></div>
+    <div class="item"><span class="item-name">Amaro Borsci</span><span class="item-fill"></span><span class="item-price">3,00 €</span></div>
+    <div class="item"><span class="item-name">Amaro Branca Menta</span><span class="item-fill"></span><span class="item-price">3,00 €</span></div>
+    <div class="item"><span class="item-name">Amaro del Capo</span><span class="item-fill"></span><span class="item-price">3,00 €</span></div>
+    <div class="item"><span class="item-name">Amaro del Diavolo</span><span class="item-fill"></span><span class="item-price">3,00 €</span></div>
+    <div class="item"><span class="item-name">Amaro Fernet Branca</span><span class="item-fill"></span><span class="item-price">3,50 €</span></div>
+    <div class="item"><span class="item-name">Amaro Jägermeister</span><span class="item-fill"></span><span class="item-price">3,50 €</span></div>
+    <div class="item"><span class="item-name">Amaro Lucano</span><span class="item-fill"></span><span class="item-price">3,50 €</span></div>
+    <div class="item"><span class="item-name">Amaro Montenegro</span><span class="item-fill"></span><span class="item-price">3,50 €</span></div>
+    <div class="item"><span class="item-name">Amaro Ramazzotti</span><span class="item-fill"></span><span class="item-price">3,50 €</span></div>
+    <div class="item"><span class="item-name">Amaro Silano</span><span class="item-fill"></span><span class="item-price">3,50 €</span></div>
+    <div class="item"><span class="item-name">Amaro Unicum</span><span class="item-fill"></span><span class="item-price">3,50 €</span></div>
+    <div class="subgroup">Grappe</div>
+    <div class="item"><span class="item-name">Grappa 903</span><span class="item-fill"></span><span class="item-price">4,00 €</span></div>
+    <div class="item"><span class="item-name">Grappa Segnana Bianca</span><span class="item-fill"></span><span class="item-price">4,00 €</span></div>
+    <div class="item"><span class="item-name">Grappa Le 18 Lune</span><span class="item-fill"></span><span class="item-price">5,00 €</span></div>
+    <div class="item"><span class="item-name">Grappa Le Bonollo</span><span class="item-fill"></span><span class="item-price">5,00 €</span></div>
+  </section>
+
+  <section class="section" id="liquori">
+    <div class="section-head"><span class="num">06</span><h2>Liquori, rum &amp; whisky</h2></div>
+    <div class="section-rule"></div>
+    <div class="subgroup">Liquori &amp; vini</div>
+    <div class="item"><span class="item-name">Baileys <span class="item-allergen">(latte)</span></span><span class="item-fill"></span><span class="item-price">4,00 €</span></div>
+    <div class="item"><span class="item-name">Cointreau</span><span class="item-fill"></span><span class="item-price">4,00 €</span></div>
+    <div class="item"><span class="item-name">Limoncello</span><span class="item-fill"></span><span class="item-price">3,50 €</span></div>
+    <div class="item"><span class="item-name">Liquirizia</span><span class="item-fill"></span><span class="item-price">3,00 €</span></div>
+    <div class="item"><span class="item-name">Martini Bianco/Rosso/Dry <span class="item-allergen">(solfiti)</span></span><span class="item-fill"></span><span class="item-price">4,00 €</span></div>
+    <div class="item"><span class="item-name">Prosecco flûte <span class="item-allergen">(solfiti)</span></span><span class="item-fill"></span><span class="item-price">3,50 €</span></div>
+    <div class="subgroup">Rum</div>
+    <div class="item"><span class="item-name">Rum Brugal Añejo</span><span class="item-fill"></span><span class="item-price">5,00 €</span></div>
+    <div class="item"><span class="item-name">Rum Matusalem 15Y</span><span class="item-fill"></span><span class="item-price">6,00 €</span></div>
+    <div class="item"><span class="item-name">Rum Diplomático</span><span class="item-fill"></span><span class="item-price">7,00 €</span></div>
+    <div class="item"><span class="item-name">Rum Zacapa 23Y</span><span class="item-fill"></span><span class="item-price">7,00 €</span></div>
+    <div class="item"><span class="item-name">Rum Barceló Imperial</span><span class="item-fill"></span><span class="item-price">6,50 €</span></div>
+    <div class="item"><span class="item-name">Sambuca</span><span class="item-fill"></span><span class="item-price">3,00 €</span></div>
+    <div class="subgroup">Whisky</div>
+    <div class="item"><span class="item-name">Whisky J&amp;B</span><span class="item-fill"></span><span class="item-price">4,00 €</span></div>
+    <div class="item"><span class="item-name">Whisky Chivas Regal</span><span class="item-fill"></span><span class="item-price">5,00 €</span></div>
+    <div class="item"><span class="item-name">Whisky Jack Daniel's</span><span class="item-fill"></span><span class="item-price">5,00 €</span></div>
+    <div class="item"><span class="item-name">Whisky Lagavulin</span><span class="item-fill"></span><span class="item-price">7,00 €</span></div>
+    <div class="item"><span class="item-name">Whisky Oban</span><span class="item-fill"></span><span class="item-price">10,00 €</span></div>
+    <div class="item"><span class="item-name">Whisky Talisker</span><span class="item-fill"></span><span class="item-price">10,00 €</span></div>
+  </section>
+
+  <section class="section" id="cocktail">
+    <div class="section-head"><span class="num">07</span><h2>Cocktail, vodka &amp; shot</h2></div>
+    <div class="section-rule"></div>
+    <div class="subgroup">Vodka</div>
+    <div class="item"><span class="item-name">Vodka Belvedere</span><span class="item-fill"></span><span class="item-price">7,00 €</span></div>
+    <div class="item"><span class="item-name">Vodka Keglevich</span><span class="item-fill"></span><span class="item-price">4,00 €</span></div>
+    <div class="item"><span class="item-name">Vodka Grey Goose</span><span class="item-fill"></span><span class="item-price">7,00 €</span></div>
+    <div class="subgroup">Cocktail &amp; shot</div>
+    <div class="item"><span class="item-name">Shot Drink</span><span class="item-fill"></span><span class="item-price">3,00 €</span></div>
+    <div class="item"><span class="item-name">Rum e Pera <span class="item-allergen">(*)</span></span><span class="item-fill"></span><span class="item-price">3,50 €</span></div>
+    <div class="item"><span class="item-name">Tequila Bum Bum / Sale e Limone</span><span class="item-fill"></span><span class="item-price">3,00 €</span></div>
+    <div class="item"><span class="item-name">Cocktail Analcolico <span class="item-allergen">(**)</span></span><span class="item-fill"></span><span class="item-price">5,00 €</span></div>
+    <div class="item"><span class="item-name">Cocktail Alcolico <span class="item-allergen">(**)</span></span><span class="item-fill"></span><span class="item-price">6,00 €</span></div>
+    <div class="item"><span class="item-name">Cocktail Alcolico Base <span class="item-allergen">(**)</span></span><span class="item-fill"></span><span class="item-price">8,00 €</span></div>
+    <div class="item"><span class="item-name">Cocktail Alcolico Premium <span class="item-allergen">(**)</span></span><span class="item-fill"></span><span class="item-price">10,00 €</span></div>
+  </section>
+
+  <section class="section" id="gelati">
+    <div class="section-head"><span class="num">08</span><h2>Gelati &amp; granite</h2></div>
+    <div class="section-rule"></div>
+    <div class="subgroup">Prodotti artigianali</div>
+    <div class="item"><span class="item-name">Rocher Pistacchio</span><span class="item-fill"></span><span class="item-price">4,50 €</span></div>
+    <div class="item"><span class="item-name">Nocciolato</span><span class="item-fill"></span><span class="item-price">4,50 €</span></div>
+    <div class="item"><span class="item-name">Tartufo Nocciola e Cacao</span><span class="item-fill"></span><span class="item-price">4,50 €</span></div>
+    <div class="item"><span class="item-name">Tartufo Nocciola e Pistacchio</span><span class="item-fill"></span><span class="item-price">4,50 €</span></div>
+    <div class="subgroup">Granite</div>
+    <div class="item"><span class="item-name">Granita Limone/Fragola <span class="item-allergen">(**)</span></span><span class="item-fill"></span><span class="item-price">2,50 €</span></div>
+  </section>
+
+  <section class="section" id="crepes">
+    <div class="section-head"><span class="num">09</span><h2>Crêpes</h2></div>
+    <div class="section-rule"></div>
+  </section>
+
+  <section class="section" id="popcorn">
+    <div class="section-head"><span class="num">10</span><h2>Pop corn</h2></div>
+    <div class="section-rule"></div>
+  </section>
+
+  <section class="section" id="zucchero">
+    <div class="section-head"><span class="num">11</span><h2>Zucchero filato</h2></div>
+    <div class="section-rule"></div>
+  </section>
+
+  <div class="legend">
+    <strong>Legenda allergeni</strong><br>
+    (*) controllare etichetta &nbsp;·&nbsp; (**) possono contenere allergeni in relazione alla ricetta<br>
+    Esposizione obbligatoria ai sensi dell'art. 180 del R.D. 6 maggio 1940, n.635 – Reg. UE 1169/2011. Gli allergeni principali sono indicati accanto a ciascun prodotto.
+  </div>
+
+</main>
+
+<footer>
+  <span class="brand">Hotel delle Stelle</span>
+  Beach Resort · Sangineto Lido<br>
+  Listino Pool Bar 2026
+</footer>
+
+<script>
+  const links = document.querySelectorAll('#nav a');
+  const sections = document.querySelectorAll('.section');
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        links.forEach(l=>l.classList.remove('active'));
+        const active = document.querySelector('#nav a[href="#'+entry.target.id+'"]');
+        if(active){
+          active.classList.add('active');
+          active.scrollIntoView({behavior:'smooth', inline:'center', block:'nearest'});
+        }
+      }
+    });
+  }, {rootMargin:'-45% 0px -50% 0px'});
+  sections.forEach(s=>obs.observe(s));
+</script>
+
+</body>
+</html>
